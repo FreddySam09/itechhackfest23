@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="container">
+    <br />
+  <h1>Welcome to Slot Booking!</h1>
+  <p>Select a day to view available slots:</p>
+  <div class="row">
+    {% for day in days %}
+    <div class="col-md-1">
+      <a href="{{ url_for('views.slots', selected_day=day) }}" class="btn btn-primary">{{ day }}</a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

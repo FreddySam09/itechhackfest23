@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Payment{% endblock %}
+{% block content %}
+<div class="container">
+    <br />
+    <h3>Payment Page</h3>
+    <p>Make payment to confirm your booking for {{ session['selected_system'] }}.</p>
+    <form method="POST" action="{{ url_for('views.confirm_booking') }}">
+        <button type="submit" class="btn btn-primary">Confirm Booking</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}System Selection{% endblock %}
+{% block content %}
+<div class="container">
+    <br />
+    <h3>Select a System for {{ selected_slot.start_time }} - {{ selected_slot.end_time }}</h3>
+    <div class="row">
+        {% for system_num in range(1, 6) %}
+        <div class="col-md-2">
+            <a href="{{ url_for('views.confirm_system', system_num=system_num) }}" class="btn btn-primary">System {{ system_num }}</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
